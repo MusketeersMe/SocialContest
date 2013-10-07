@@ -74,7 +74,7 @@ try {
 }
 
 // services helper class
-$queueProcessor = new QueueProcessor($config->hashtags);
+$queueProcessor = new QueueProcessor($config->hashtags->toArray());
 
 // Get message.
 while (true) {
