@@ -1,0 +1,16 @@
+<?php
+/**
+ * Created by JetBrains PhpStorm.
+ * User: sandysmith
+ * Date: 10/4/13
+ * Time: 10:59 AM
+ * To change this template use File | Settings | File Templates.
+ */
+$next_winner = $this->nextWinner($contestInfo);
+?>
+<?php if ($next_winner): ?>
+    <?= $next_winner ?>
+    To enter: Just tweet a photo with the <?= $this->hashtags($hashtags) ?>!
+<?php else: ?>
+    The contest has ended. Congratulations!
+<?php endif; ?>

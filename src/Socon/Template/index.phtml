@@ -1,0 +1,65 @@
+<?php
+use Socon\Model\EntryRepositoryTable;
+/** @var EntryRepositoryTable $winners */
+/** @var EntryRepositoryTable $entries */
+$this->header();
+?>
+
+<header class="header">
+    <h1 class="text-muted"><?= $project ?></h1>
+    <hr />
+</header>
+
+<section id="enter-instructions">
+    <?= $this->partial('partial.next_winner.phtml', ['hashtags' => $hashtags,
+        'contestInfo' => $contestInfo]) ?>
+</section>
+
+<div class="row-fluid">
+
+    <section class="span6 winners">
+        <?php if ($winners && $winners->count()): ?>
+            <?php if (1 < $winners->count()): ?>
+                <h2>Winners</h2>
+            <?php else: ?>
+                <h2>Winner:</h2>
+            <?php endif; ?>
+
+            <ul class="cbp_tmtimeline">
+                <?php foreach ($winners as $entry): ?>
+
+                    <?= $this->partial('partial.winner.phtml', ['entry' => $entry, 'container_url' => $container_url]); ?>
+                <?php endforeach ?>
+            </ul>
+
+        <?php endif; ?>
+    </section>
+
+
+    <?php if ($entries && $entries->count()): ?>
+        <section class="span6 entries">
+            <h2>Entries</h2>
+
+            <ul class="cbp_tmtimeline">
+                <?php foreach ($entries as $entry): ?>
+
+                    <?= $this->partial('partial.entry.phtml', ['entry' => $entry, 'container_url' => $container_url]); ?>
+
+                <?php endforeach; ?>
+            </ul>
+
+        </section>
+
+    <?php endif; ?>
+
+
+</div>
+
+    <footer>
+        Built by <a href="http://musketeers.me" class="musketeers_badge">musketeers.me, llc</a>
+        thanks to the sponsorship of <a href="http://www.microsoft.com"
+                               class="microsoft_badge">Microsoft</a>
+    </footer>
+
+<?php
+$this->footer();
