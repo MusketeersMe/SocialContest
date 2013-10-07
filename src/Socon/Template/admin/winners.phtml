@@ -1,0 +1,88 @@
+<?php
+$this->header();
+$active_nav = 'winners';
+include( __DIR__ . '/_nav.phtml');
+use \Socon\Model\Entry;
+?>
+
+
+    <div class="container">
+
+        <h1>Winning Entries</h1>
+
+<?php
+/** @var Socon\Model\EntryRepositoryTable $entries */
+if ($entries):
+    $i = 0;
+    ?>
+    <div class="row-fluid">
+    <?php
+    foreach ($entries as $entry):
+        /** @var Socon\Model\Entry $entry */
+        if (!$entry) continue;
+        ?>
+        <div class="span4 well well-small entry-card">
+
+            <div class="span2">
+                <?php if ($entry->getUserImage()): ?>
+                    <img src="<?= $entry->getUserImage() ?>" class="img-responsive" />
+                <?php endif; ?>
+            </div>
+
+            <div class="span9">
+
+
+                <b class="icon icon-<?=$entry->getSource() ?>">
+                    <a href="<?= $entry->getUserUrl() ?>"><?=
+                        $this->escape($entry->getUserName())
+                        ?></a>
+                </b>
+
+                <p><?= $this->escape($entry->getContent()) ?></p>
+                <?php if ($image = $this->EntryImageUrl($entry, $container_url)): ?>
+                    <div class="span9 twimage">
+                        <img class="img-responsive" src="<?= $image ?>"
+                             alt="" />
+                    </div>
+                <?php endif; ?>
+            </div>
+
+            <div class="btn-block clearfix">
+
+                <a target="_blank" href="<?= $entry->getUrl() ?>" class="btn btn-small"><i
+                        class="icon
+                        icon-eye-open"></i></a>
+                <a target="_blank" href="<?= $this->congratulateTweetLink($entry->getUserName(),
+                    $congratulations_text)
+                ?>"
+                   class="btn btn-info"><i class="icon-bullhorn icon-white"></i> Congratulate on
+                    Twitter</a>
+            </div>
+
+        </div><!-- .well -->
+
+        <?php
+        $i++;
+    endforeach;
+
+    if ($i % 3 > 0 ):
+        ?>
+
+        </div><!-- .row -->
+
+    <?php endif; ?>
+
+
+    <?php if (0 == $i): ?>
+        <p class="text-warning">None found.</p>
+    <?php endif; ?>
+<?php endif; ?>
+
+    <div class="row">
+        <p><?= date('Y-m-d h:ia') ?></p>
+    </div>
+
+
+    </div> <!-- /container -->
+<?php
+$this->footer();

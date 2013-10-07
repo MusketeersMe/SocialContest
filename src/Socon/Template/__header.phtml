@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><?= $this->escape($page->title) ?></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- stylesheets -->
+    <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link href="/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+      <link rel="author" href="/humans.txt" />
+<?php if (isset($css)): ?>
+  <?php foreach ($css as $sheet): ?>
+    <link href="<?= $sheet ?>" rel="stylesheet" media="screen">
+  <?php endforeach; ?>
+<?php endif; ?>
+
+  </head>
+  <body data-updated="<?= time() ?>">

@@ -1,0 +1,23 @@
+<?php
+$this->header();
+include( __DIR__ . '/_nav.phtml');
+?>
+
+
+    <div class="container">
+
+        <h1>Options</h1>
+
+        <p class="lead">What would you like to do? Select from the tasks below.</p>
+
+        <p>
+            <a href="/admin/incoming" class="btn btn-large">View Incoming entries</a>
+            <a href="/admin/approved" class="btn btn-primary btn-large">View Approved entries</a>
+            <a href="/admin/winners" class="btn btn-large">View Winning entries</a>
+        </p>
+
+
+        <p><a href="/admin/denied" class="btn btn-small">View denied entries</a></p>
+    </div> <!-- /container -->
+<?php
+$this->footer();
