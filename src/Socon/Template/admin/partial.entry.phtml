@@ -1,0 +1,43 @@
+<?php
+use Socon\Model\Entry;
+?>
+<div class="span4 well well-small entry-card" data-id="<?= $entry->getId() ?>" data-status="<?=
+Entry::STATUS_APPROVED ?>" data-prev-status="<?= $entry->getStatus() ?>">
+
+    <div class="span2">
+        <?php if ($entry->getUserImage()): ?>
+            <img src="<?= $entry->getUserImage() ?>" class="img-responsive" />
+        <?php endif; ?>
+    </div>
+
+    <div class="span9">
+
+        <b class="icon icon-<?=$entry->getSource() ?>">
+            <a href="<?= $entry->getUserUrl() ?>"><?=
+                $this->escape($entry->getUserName())
+                ?></a>
+        </b>
+
+        <p><?= $this->escape($entry->getContent()) ?> <?= $this->date($entry->getUpdated(),
+                'H:i') ?></p>
+        <?php if ($image = $this->EntryImageUrl($entry, $container_url)): ?>
+            <div class="span9 twimage">
+                <img class="img-responsive" src="<?= $image ?>"
+                     alt="" />
+            </div>
+        <?php endif; ?>
+    </div>
+
+    <div class="btn-block clearfix">
+        <a target="_blank" href="<?= $entry->getUrl() ?>" class="btn btn-small"><i
+                class="icon icon-eye-open"></i></a>
+        <input type="button" class="btn btn-primary" value="Approve" title="Move to approved queue."
+               data-status="<?= Entry::STATUS_APPROVED ?>"
+               data-id="<?= $entry->getId() ?>" data-prev-status="<?= $entry->getStatus() ?>"
+            />
+        <input type="button" class="btn btn-danger" value="Deny" title="Move to denied queue."
+               data-status="<?= Entry::STATUS_DENIED ?>"
+               data-id="<?= $entry->getId() ?>" data-prev-status="<?= $entry->getStatus() ?>"
+            />
+    </div>
+</div>

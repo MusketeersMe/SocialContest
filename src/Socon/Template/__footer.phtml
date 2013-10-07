@@ -1,0 +1,9 @@
+    <script src="http://code.jquery.com/jquery.js"></script>
+    <script src="/bootstrap/js/bootstrap.min.js"></script>
+    <?php if (isset($js)): ?>
+        <?php foreach ($js as $script): ?>
+            <script src="<?= $script ?>"></script>
+        <?php endforeach; ?>
+    <?php endif; ?>
+    </body>
+</html>

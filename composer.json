@@ -1,0 +1,21 @@
+{
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "http://packages.zendframework.com/"
+        },
+        {
+            "type": "pear",
+            "url": "http://pear.php.net"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "zendframework/zend-config": "2.*",
+        "phly/phlyty": "dev-master",
+        "microsoft/windowsazure": "*"
+    },
+    "autoload": {
+        "psr-0" : {"Socon\\": "src/"}
+    }
+}

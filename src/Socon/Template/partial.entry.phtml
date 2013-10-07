@@ -1,0 +1,29 @@
+<?php
+use Socon\Model\Entry;
+/** @var Entry $entry */
+?>
+<li>
+    <time class="cbp_tmtime" datetime="<?= $entry->getCreated()->format('Y-m-d H:i:s') ?>">
+        <span><?= $this->date($entry->getUpdated()) ?></span>
+        <span><?= $this->date($entry->getUpdated(), 'g:ia') ?></span></time>
+    <div class="cbp_tmicon icon-twitter"></div>
+    <div class="cbp_tmlabel">
+
+        <h2>
+            <?php if ($entry->getUserImage()): ?>
+                <img src="<?= $entry->getUserImage() ?>"
+                     class="img-responsive user_image" />
+            <?php endif; ?>
+            <?= $this->escape($entry->getUserName()) ?>
+        </h2>
+        <?php if ($image = $this->EntryImageUrl($entry, $container_url)): ?>
+            <p class="image_post">
+                <img class="img-responsive" src="<?= $image ?>" alt="" />
+            </p>
+        <?php endif; ?>
+
+        <?php if ($this->escape($entry->getContent()) > ''): ?>
+            <p class="content"><?= $this->escape($entry->getContent()) ?></p>
+        <?php endif; ?>
+    </div>
+</li>
