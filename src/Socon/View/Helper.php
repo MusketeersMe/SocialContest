@@ -77,7 +77,7 @@ class Helper {
     public static function hashtags(array $hashtags)
     {
         if (1 < count($hashtags)) {
-            return 'hashtags <strong>#' . implode('</strong> and <strong>#') . '</strong>';
+            return 'hashtags <strong>#' . implode('</strong> and <strong>#', $hashtags) . '</strong>';
         }
         return 'hashtag <strong>#' . $hashtags[0] . '</strong>';
     }

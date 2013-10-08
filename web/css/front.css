@@ -1,0 +1,275 @@
+*, *:after, *:before { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+body, html {
+    font-size: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+.bp-icon:after {
+    font-family: 'bpicons';
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    text-align: center;
+    color: #47a3da;
+    -webkit-font-smoothing: antialiased;
+}
+
+/*
+    Custom CSS
+    author: Kevin Bruce
+    date: 2013-09-26
+*/
+
+body, html {
+    background-color: #0066DC;
+}
+
+.container {
+    background-color: #0066DC;
+}
+
+header {
+    display: block;
+    height: auto;
+    background-color: #0066DC;
+    color: #fff;
+}
+
+h1, h2, h3, h4 {
+    color: #FFFFFF;
+    font-weight: 100;
+}
+
+h1 {
+    display: block;
+    font-size: 2.8em;
+    margin: 0;
+    padding: 10px 20px;
+    float: left;
+}
+
+#enter-instructions {
+    background-color: #7FB1FF;
+    color: #0066DC;
+    display: block;
+    font-size: 1.5em;
+    padding: 20px 20px 20px 25px;
+}
+
+/*
+Latest Winner area
+*/
+
+.well.well-large {
+
+    background-image: url('/img/bg_clouds.png');
+    background-position: bottom center;
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+.well.well-large h2, .well.well-large h3 {
+    color: #0066DC;
+    font-weight: normal;
+}
+
+hr {
+    visibility:hidden;
+    clear: both;
+    padding: 0;
+    margin: 0;
+}
+
+.well.well-large section {
+    display: block;
+}
+
+.well.well-large section#latest-winner {
+    margin-right: 2%;
+}
+
+.well.well-large section#latest-winner h3 {
+    background-color: #FFBA00;
+    padding: 10px;
+    display: block;
+    color: #fff;
+    margin-bottom: 0;
+}
+
+.well.well-large section#latest-winner h3 a {
+    color: #fff;
+}
+
+.well.well-large section#latest-winner p {
+    background-color: #fff;
+    padding: 10px;
+    margin-bottom: 0;
+    padding-bottom: 20px;
+    min-height: 100px;
+}
+
+.cbp_tmtimeline:last-child li {
+    margin-bottom: 0;
+    padding-bottom: 10px;
+}
+
+
+/* image containers */
+.image_post {
+    text-align: center;
+    background-color: #ACC9FF;
+    max-height: 200px;
+    vertical-align: middle;
+}
+
+.image_post img {
+    max-height: 200px;
+}
+
+.content {
+    margin: 0;
+    padding: 20px;
+}
+
+.winners > h2,
+.entries > h2 {
+    padding-left: 25px;
+    font-weight: 900;
+}
+
+.winners .cbp_tmtimeline > li .cbp_tmlabel h2,
+.entries .cbp_tmtimeline > li .cbp_tmlabel h2 {
+    margin: 0;
+    padding: 0;
+    font-size: 1.2em;
+    clear: both;
+    overflow: hidden;
+}
+
+.cbp_tmtime span {
+    margin-left: 20px;
+}
+
+.user_image {
+    width: 60px;
+    margin-right: 10px
+}
+
+.row-fluid {
+    position: relative;
+}
+
+.winners {
+    background-color: darkblue;
+}
+
+.entries {
+    background-color: #0066DC;
+}
+
+/* winners timeline */
+.winners .cbp_tmtimeline:before {
+    background: #FFBA00;
+}
+
+/* winners icons */
+.winners .cbp_tmtimeline > li .cbp_tmicon {
+    box-shadow: 0 0 0 8px #FFBA00;
+    background-color: darkblue;
+    color: #FFBA00;
+}
+
+.span6.winners .cbp_tmtimeline > li .cbp_tmtime {
+    background-color: #00008B;
+}
+
+/* entries icons */
+.entries .cbp_tmtimeline > li .cbp_tmicon {
+    box-shadow: none;
+    background-color: #ACC9FF;
+}
+
+footer {
+    display: block;
+    padding: 20px;
+    background-color: #fff;
+}
+
+footer a.microsoft_badge,
+footer a.musketeers_badge {
+    display: inline-block;
+    width: 169px;
+    height: 37px;
+    vertical-align: middle;
+    text-indent: -5000px;
+    margin: 0 5px;
+
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-image: url('/img/microsoft_badge.png');
+}
+
+footer a.musketeers_badge {
+    background-image: url('/img/musketeers_badge.png');
+    width: 234px;
+}
+
+@media screen and (max-width: 1260px) {
+
+    .span6 .cbp_tmtimeline > li .cbp_tmtime {
+        top: 0px;
+        padding: 10px;
+        z-index: 5000px;
+        background-color: #0073FF;
+    }
+    .span6 .cbp_tmtimeline > li .cbp_tmicon {
+        top: 66px;
+        z-index: 4999px;
+    }
+}
+
+@media screen and (min-width: 1718px) {
+    .cbp_tmlabel {
+        position: relative;
+    }
+
+    .image_post {
+        float: right;
+        width: 50%;
+        padding: 0 3%;
+        margin: 0;
+        clear: none;
+    }
+
+   .content {
+        float: left;
+        display: block;
+        width: 50%;
+        clear: left;
+        font-size: .9em;
+    }
+
+    .winners .cbp_tmtimeline > li .cbp_tmlabel h2,
+    .entries .cbp_tmtimeline > li .cbp_tmlabel h2 {
+        float: left;
+        width: 50%;
+        clear: none;
+    }
+
+    .entries:after {
+        right: 51%;
+        border: solid transparent;
+        content: " ";
+        height: 0;
+        width: 0;
+        position: absolute;
+        pointer-events: none;
+        border-right-color: #0066DC;
+        border-width: 39px;
+        top: 96px;
+    }
+
+}
