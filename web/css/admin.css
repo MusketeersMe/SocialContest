@@ -1,0 +1,32 @@
+body {
+    padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
+}
+
+.img-responsive {
+    width: 100%;
+    height: auto;
+}
+
+.row-fluid .entry-card:first-child {
+    margin-left: 5px;
+}
+
+.row-fluid .entry-card {
+    margin-left: 5px;
+    margin-right: 5px;
+    position: relative;
+    padding-bottom: 30px;
+    height: 340px;
+}
+
+.entry-card .btn-block {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    text-align: right;
+}
+
+.entry-card .twimage img {
+    max-height: 200px;
+    max-width: 240px;
+}

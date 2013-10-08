@@ -1,0 +1,17 @@
+/* TEAM */
+    Developer: Oscar Merida
+    Site: http://musketeers.me/
+    Twitter: @omerida
+    Location: Virginia, USA
+
+    Developer: Sandy Smith
+    Site: http://musketeers.me/
+    Twitter: @SandyS1
+    Location: Virginia, USA
+
+    Designer: Kevin Bruce
+    Site: http://musketeers.me/
+    Twitter: @kevinbruce
+    Location: Maryland, USA
+
+    Sponsor: Microsoft
